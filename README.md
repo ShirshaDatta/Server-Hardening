@@ -10,7 +10,7 @@
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+* <!--[Acknowledgements](#acknowledgements) -->
 
 
 ## About The Project
@@ -90,6 +90,10 @@ Create Super User and setup fail2ban
 We saw that the playbook is successfully run. Now we will cross-check the same manually.
 
 Checking if nginx is installed and  the service started and firewall rules
+```
+systemctl status nginx
+iptables -L
+```
 <img src="images/checking.PNG" alt="Logo">
 
 Checking if fail-to-ban is installed and running
