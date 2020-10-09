@@ -6,7 +6,7 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
-* [Proofs](#proof)
+* [Proofs](#proofs)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
