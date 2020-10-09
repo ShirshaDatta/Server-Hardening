@@ -1,0 +1,13 @@
+- hosts: all
+  tasks:
+    - name: Lock boot directory
+      lineinfile:
+        path: /etc/fstab
+        state: present
+        line: "LABEL=/boot /boot  ext2  defaults,ro  1 2"
+    - name: change permissions
+      file:
+        path: "/etc/grub.conf"
+        owner: root
+        group: root
+        mode: 0600

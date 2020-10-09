@@ -1,0 +1,6 @@
+- name: remove all rules
+  include: iptables-dropall.yml
+- name: setup webserver and add rules
+  include: iptables-webserver.yml
+- name: setup ssh for network
+  include: iptables-ssh.yml

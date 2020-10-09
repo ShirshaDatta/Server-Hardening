@@ -1,0 +1,5 @@
+
+- name: remove luks container
+  luks_device:
+    device: "/dev/sdd1"
+    state: absent

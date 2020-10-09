@@ -1,0 +1,6 @@
+
+- name: Close LUKS container
+  luks_device:
+    device: "/dev/sdd1"
+    state: "closed"
+    keyfile: "../../vaults/luks.yml/vaults/luks.yml"

@@ -1,0 +1,5 @@
+
+- name: remove all other rules
+  iptables:
+    chain: INPUT
+    jump: DROP

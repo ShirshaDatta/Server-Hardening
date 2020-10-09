@@ -1,0 +1,3 @@
+var_files:
+  - ../../vaults/ssh-pub.yml
+  - ../../vaults/user.yml

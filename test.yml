@@ -1,0 +1,29 @@
+- hosts: localhost
+  tasks:
+  - name: configure webserver
+    package: 
+      name: nginx
+      state: present
+  - name: start service
+    service: 
+      name: nginx
+      state: started
+      enabled: yes
+  - name: setup iptables rules
+    iptables:
+      chain: INPUT
+      jump: ACCEPT
+      destination_port: 80
+      protocol: tcp
+  - name: configure ssh only for one network
+    iptables:
+        chain: INPUT
+        jump: ACCEPT
+        destination_port: 22
+        protocol: tcp
+        source: 10.0.0.0/24
+  - name: remove all other rules
+    iptables:
+      chain: INPUT
+      jump: DROP
+      

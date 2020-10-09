@@ -1,0 +1,21 @@
+- name: add group
+  group:
+    name: power
+    state: present
+- name: Give sudo powers to power group
+  lineinfile:
+    path: /etc/sudoers
+    state: present
+    line: "%power  ALL=(ALL:ALL) NOPASSWD:ALL"
+    validate: "/usr/sbin/visudo -cf %s"
+- name: Install sudo package
+  package:
+    name: sudo
+    state: present
+- name: create user
+  user:
+    name: "{{ user }}"
+    group: power
+    password: "{{ password | password_hash('sha512') }}"
+    shell: /bin/bash
+    append: yes

@@ -1,0 +1,24 @@
+- name: install fail2ban
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - fail2ban
+    - sendmail
+- name: start serivce
+  service:
+    name: "{{item }}"
+    state: started
+    enabled: yes
+  with_items:
+    - fail2ban
+    - sendmail
+
+- name: configure fail2ban
+  copy: 
+    src: "/etc/fail2ban/fail2ban.conf"
+    dest: "fail2ban.local"
+- name: create jail.conf local
+  copy:
+    src: "/etc/fail2ban/jail.conf"
+    dest: "jail.local"

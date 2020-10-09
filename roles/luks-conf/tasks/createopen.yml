@@ -1,0 +1,7 @@
+
+- name: create and open the luks container
+  luks_device:
+    device: "/dev/sdd1"
+    state: "opened"
+    name: "crypto"
+    keyfile: "../../vaults/luks.yml"

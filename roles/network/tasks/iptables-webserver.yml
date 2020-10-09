@@ -1,0 +1,19 @@
+
+- name: configure webserver
+  package: 
+    name: nginx
+    state: present
+- name: start service
+  service: 
+    name: nginx
+    state: started
+    enabled: yes
+- name: setup iptables rules
+  iptables:
+    chain: INPUT
+    jump: ACCEPT
+    destination_port: 80
+    protocol: tcp
+
+
+

@@ -1,0 +1,27 @@
+
+- name: change single mode user settings
+  lineinfile:
+    path: "{{ item }}"
+    regexp: '^(.*)ExecStart=-/lib/systemd/systemd-sushell'
+    line: 'ExecStart=-/lib/systemd/systemd-sulogin-shell emergency'
+  with_items:
+    - "/lib/systemd/system/emergency.service"
+    - "/lib/systemd/system/rescue.service"
+
+- name: sceure grub loader by adding password
+  lineinfile:
+    path: "/etc/grub.d/40_custom"
+    line: "{{ item }}"
+  with_items:
+    - "set superusers = '{{ grub_user }} ' "
+    - "password_pbkdf2 '{{ grub_user }}' '{{grub_password_v2_passwd}}' "
+  
+- name: "grub2-mkconfig MBR"
+  command: update grub
+  when: grub_efi.stat.exists == False
+
+- name: disable remote reboot
+  command: "{{ item }}"
+  with_items:
+    - "systemctl mask ctrl-alt-del.target"
+    - "systemctl daemon-reload"
