@@ -13,11 +13,7 @@
 * [Acknowledgements](#acknowledgements)
 
 
-
-
 ## About The Project
-
-
 
 This is a Repository containing Server Hardening techniques which have been implemented using Ansible Roles.
 
@@ -45,17 +41,17 @@ Along with that it contains a role for setting up and configuring docker and kub
 * [Kubernetes](https://kubernetes.io/docs/home/)
 
 
-
-
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
+
 ### Prerequisites
 
 * pip
 * AWS ec2 instance
+
 
 ### Installation
 
@@ -89,35 +85,39 @@ Setup Firewall Rules
 Create Super User and setup fail2ban
 <img src = "images/Create Super User and setup fail2ban.PNG">
 
+## Proofs
+
+We saw that the playbook is successfully run. Now we will cross-check the same manually.
+
+Checking if nginx is installed and  the service started and firewall rules
+<img src="images/checking.PNG" alt="Logo"
+
+Checking if fail-to-ban is installed and running
+<img src="images/checking2.PNG" alt="Logo" >
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+3. Commit your Changes (`git commit -m 'Added some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## Proofs
-
-gggg
 
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
-
 ## Contact
-
 
 - Your Name - Shirsha Datta
  
 - You can contact me at shirshadatta2000@gmail.com
 
 - Project Link: [https://github.com/ShirshaDatta/Server-Hardening](https://github.com/ShirshaDatta/Server-Hardening)
-
 
 
 ## Acknowledgements
