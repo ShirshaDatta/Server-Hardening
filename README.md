@@ -75,14 +75,23 @@ yum install ansible
 ```
 ## Usage
 
-Check if ansible is installed successfully. ``` ansible --version ```
+Check if ansible is installed successfully. Run the below command.
+``` ansible --version ```
 
 <img src= "images/ansible --version.PNG" alt="Logo">
 
-Setup Firewall Rules
+Setup Firewall Rules.  Run the below given commands.
+```
+cd Server-Hardening
+ansible-playbook network.yml
+```
 <img src = "images/setup firewall rules.PNG" alt="Logo" >
 
 Create Super User and setup fail2ban
+```
+ansible-playbook --ask-vault-pass accounts.yml
+Enter password: $ANSIBLE_VAULT_PASS
+```
 <img src = "images/Create Super User and setup fail2ban.PNG">
 
 ## Proofs
