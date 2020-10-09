@@ -75,7 +75,7 @@ yum install ansible
 ```
 ## Usage
 
-Check if ansible is installed successfully.
+Check if ansible is installed successfully. ``` ansible --version ```
 
 <img src= "images/ansible --version.PNG" alt="Logo">
 
@@ -89,14 +89,17 @@ Create Super User and setup fail2ban
 
 We saw that the playbook is successfully run. Now we will cross-check the same manually.
 
-Checking if nginx is installed and  the service started and firewall rules
+Checking if nginx is installed and  the service started and firewall rules.Run the below given commands.
 ```
 systemctl status nginx
 iptables -L
 ```
 <img src="images/checking.PNG" alt="Logo">
 
-Checking if fail-to-ban is installed and running
+Checking if fail-to-ban is installed and running.run the below given command.
+```
+systemctl status fail2ban
+```
 <img src="images/checking2.PNG" alt="Logo" >
 
 ## Contributing
