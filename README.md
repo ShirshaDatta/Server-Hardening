@@ -15,7 +15,7 @@
 
 ## About The Project
 
-This is a Repository containing Server Hardening techniques which have been implemented using Ansible Roles.
+This Repository contains Server Hardening Techniques which are implemented using Ansible Roles
 
 I have created ansible roles for the following tasks
 - accounts : this installs and configures fail2ban which helps in intrusion detection and system administrators can check illegal activities from logs
